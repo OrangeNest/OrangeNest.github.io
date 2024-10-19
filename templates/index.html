@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrangeNest - Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <h1>OrangeNest</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Listings</a></li>
+                <li><a href="#">Roommates</a></li>
+                <li><a href="#">Subleases</a></li>
+                <li><a href="{{ url_for('login') }}">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <form action="{{ url_for('home') }}" method="GET">
+            <!-- Filter by Region -->
+            <label for="region">Filter by Region:</label>
+            <select id="region" name="region">
+                <option value="">All Regions</option>
+                <option value="Downtown">Downtown</option>
+                <option value="University Hill">University Hill</option>
+                <option value="Eastside">Eastside</option>
+            </select>
+
+            <!-- Filter by Price -->
+            <label for="price">Filter by Price:</label>
+            <select id="price" name="price">
+                <option value="">All Prices</option>
+                <option value="500">$500 and below</option>
+                <option value="1000">$1000 and below</option>
+                <option value="1500">$1500 and below</option>
+                <option value="2000">$2000 and below</option>
+            </select>
+
+            <button type="submit">Filter</button>
+        </form>
+    </section>
+
+    <main>
+        <section class="listings">
+            <h2>Available Apartments & Houses</h2>
+            <!-- Display filtered listings dynamically -->
+            {% for listing in listings %}
+            <div class="listing-item">
+                <h3>{{ listing['title'] }}</h3>
+                <p>Price: ${{ listing['price'] }}/month</p>
+                <p>Location: {{ listing['location'] }}</p>
+                <button>More Details</button>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
