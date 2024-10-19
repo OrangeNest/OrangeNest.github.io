@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrangeNest - Listings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <h1>OrangeNest</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Listings</a>
+                <li><a href="#">Roommates</a></li>
+                <li><a href="#">Subleases</a></li>
+                <li><a href="{{ url_for('login') }}">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="listings">
+            <h2>Available Apartments & Houses</h2>
+            <div class="listing-item">
+                <h3>Studio</h3>
+                <p>Price: $1400/month</p>
+                <p>Location: 614 South Crouse Ave, Syracuse, NY, 13210</p>
+                <button>More Details</button>
+            </div>
+            <!-- Add more listings as needed -->
+        </section>
+    </main>
+</body>
+</html>
