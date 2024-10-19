@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrangeNest - Off-Campus Housing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>OrangeNest</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Listings</a></li>
+                <li><a href="#">Roommates</a></li>
+                <li><a href="#">Subleases</a></li>
+                <li><a href="#">Guide</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Renter Education</a></li>
+                <li><a href="#login">Login/Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Filter Header -->
+    <div class="filter-header">
+        <h2>Apartments & houses for rent near Syracuse University</h2>
+        <div class="filter-options">
+            <div class="filter-buttons">
+                <button>Beds</button>
+                <button>Baths</button>
+                <button>Price</button>
+            </div>
+            <div class="price-toggle">
+                <span>Per Unit</span>
+                <input type="checkbox" id="priceToggle">
+                <label for="priceToggle">Per Person</label>
+            </div>
+            <button class="more-filters">More Filters ▼</button>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" class="login-container">
+        <h2>Login to OrangeNest</h2>
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div id="signup" class="signup-container">
+        <h2>Sign Up for OrangeNest</h2>
+        <form action="/signup" method="post">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="username" required><br>
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="password" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+</body>
+</html>
